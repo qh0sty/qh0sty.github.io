@@ -1,0 +1,38 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+	height: 50%;
+	width: 50%;
+	overflow: hidden; /* no scrollbars for a clean full-screen look */
+	font-family: "Dancing Script", cursive;
+}
+
+.viewer {
+	position: relative;	/* important: anchors the absolute-positioned children */
+	height: 100vh;		/* full viewpoint height */
+	width: 100vw;		/* full viewpoint width */
+}
+/* The image: covers the entire viewer */
+.viewer img {
+	position: absolute;
+	inset: 0;			/* shorthand for top/right/bottom/left: 0 */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;	/* fill without distortion; may crop */
+}
+
+/* The caption: sits at the bottom, readable over the image */
+.viewer .description {
+    position: absolute;
+    top: 50%;
+    left: -50;
+    bottom: 0;
+    transform: translate(0%, 50%); /*shifts back half its own size*/
+    font-size: 3rem;
+    padding: 1rem 1.5rem;
+    color: #FA8072;
+    background: rgba(2, 49, 99, 0.5); /* translucent bar for contrast */
+    border-radius: 3rem;
+    text-shadow: 1.5px 0px #FFFFFF;
+}
